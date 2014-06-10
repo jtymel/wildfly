@@ -315,8 +315,7 @@ public class DataSourceDefinition extends SimpleResourceDefinition {
                         return !attributeValue.isDefined() || !attributeValue.asString().equals("true");
                     }
                 }, STATISTICS_ENABLED)
-                .setDiscard(DiscardAttributeChecker.UNDEFINED, TRACKING)
-                .addRejectCheck(RejectAttributeChecker.DEFINED, TRACKING)
+                .addRejectCheck(RejectAttributeChecker.UNDEFINED, TRACKING)
                 .end()
                 //We're rejecting operations when statistics-enabled=false, so let it through in the enable/disable ops which do not use that attribute
                 .addOperationTransformationOverride(DATASOURCE_ENABLE.getName())
