@@ -285,7 +285,7 @@ public final class VaultSession {
     public boolean removeSecuredAttribute(String vaultBlock, String attributeName) throws Exception {
         return vault.remove(vaultBlock, attributeName, null);
     }
-    
+
     /**
      * Retrieves secured attribute from specified vault block with specified attribute name. This method can be called only after successful
      * startVaultSession() call.
@@ -296,7 +296,7 @@ public final class VaultSession {
      * @throws Exception
      */
     public char[] retrieveSecuredAttribute(String vaultBlock, String attributeName) throws Exception {
-        return vault.retrieve(vaultBlock, attributeName, null);        
+        return vault.retrieve(vaultBlock, attributeName, null);
     }
 
     /**

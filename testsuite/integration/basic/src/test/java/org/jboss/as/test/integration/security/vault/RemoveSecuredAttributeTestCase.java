@@ -22,7 +22,7 @@
 package org.jboss.as.test.integration.security.vault;
 
 import org.jboss.as.security.vault.VaultSession;
-import org.jboss.as.test.integration.security.common.VaultHandler
+import org.jboss.as.test.integration.security.common.VaultHandler;
 import org.jboss.logging.Logger;
 import org.jboss.security.vault.SecurityVaultException;
 import org.junit.After;
