@@ -60,7 +60,7 @@ import org.junit.runner.RunWith;
 @ServerSetup({JACCTranslateServletDDTestCase.SecurityDomainsSetup.class})
 @RunAsClient
 @Category(CommonCriteria.class)
-@Ignore("WFLY-4991")
+//@Ignore("WFLY-4991")
 public class JACCTranslateServletDDTestCase {
     private static final String SECURITY_DOMAIN_NAME = "jacc-test";
     private static final String WEBAPP_NAME = "jacc-test.war";
@@ -108,7 +108,7 @@ public class JACCTranslateServletDDTestCase {
     /**
      * Test usage of transport guarantee constraints.
      */
-    @Test
+//    @Test
     public void testConnectionType(@ArquillianResource URL webAppURL) throws Exception {
         final Node node = getContextPolicyNode(webAppURL, WEBAPP_NAME);
         assertFalse(
@@ -155,7 +155,7 @@ public class JACCTranslateServletDDTestCase {
     /**
      * Test usage of qualified patterns.
      */
-    @Test
+//    @Test
     public void testQualifiedPatterns(@ArquillianResource URL webAppURL) throws Exception {
         final Node node = getContextPolicyNode(webAppURL, WEBAPP_NAME);
         assertTrue("Default pattern '/' must be qualified.", node.selectNodes("*/Permission[@name='/']").isEmpty());
@@ -182,6 +182,7 @@ public class JACCTranslateServletDDTestCase {
         final InputStream is = servletURL.openStream();
         try {
             final Document document = new SAXReader().read(is);
+            System.out.println("$$$$$$$$$$$$ $$$$$$$$$$$ " + document.asXML());
             final String xpathBase = "/" + ListJACCPoliciesServlet.ROOT_ELEMENT
                     + "/ActiveContextPolicies/ContextPolicy[@contextID='" + contextId + "']";
             final Node contextPolicyNode = document.selectSingleNode(xpathBase);
